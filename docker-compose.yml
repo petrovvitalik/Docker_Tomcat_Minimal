@@ -1,1 +1,12 @@
 ---
+version: "3.9"
+services:
+  back:
+    build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
+    volumes: /home/ubuntu/boxfuse-sample-java-war-hello/:/app/
+  front:
+    build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - /home/ubuntu/boxfuse-sample-java-war-hello/target/:/usr/local/tomcat/webapps/
