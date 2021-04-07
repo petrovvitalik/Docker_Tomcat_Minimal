@@ -5,13 +5,13 @@ services:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
       - type: bind
-        source: /home/ubuntu/boxfuse-sample-java-war-hello
-        target: /app
+        source: /home/ubuntu/DCMT_Shared
+        target: /var/opt/
   front:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
     volumes:
       - type: bind
-        source: /home/ubuntu/boxfuse-sample-java-war-hello/target
-        target: /usr/local/tomcat/webapps
+        source: /home/ubuntu/DCMT_Shared
+        target: /usr/local/tomcat/webapps/
