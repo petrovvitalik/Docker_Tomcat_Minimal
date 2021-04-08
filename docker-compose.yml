@@ -16,7 +16,6 @@ services:
       - type: bind
         source: /home/ubuntu/apache-tomcat-9.0.45/
         target: /tomcat
-      - data-volume:/tomcat/webapps
 volumes:
   data-volume:
 # data-volume:/usr/local/tomcat/webapps/
