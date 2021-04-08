@@ -12,6 +12,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
+      - /home/ubuntu/apache-tomcat-9.0.45/:/tomcat/
       - data-volume:/tomcat/webapps/
 volumes:
   data-volume:
