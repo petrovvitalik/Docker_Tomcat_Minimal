@@ -12,10 +12,10 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - type: volume
+      - type: bind
         source: /home/ubuntu/jdk-16
         target: /java
-      - type: volume
+      - type: bind
         source: /home/ubuntu/apache-tomcat-9.0.45
         target: /tomcat
       - data-volume:/tomcat/webapps/
