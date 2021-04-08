@@ -1,1 +1,2 @@
 FROM tomcat:latest
+ls /usr/local/tomcat/webapps/
