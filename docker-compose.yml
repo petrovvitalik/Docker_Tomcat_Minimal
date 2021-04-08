@@ -8,11 +8,17 @@ services:
     links:
       - tomcat
   tomcat:
-    image: tomcat:8-alpine
+    build:
     ports:
       - "8080:8080"
     volumes:
-      - data-volume:/usr/local/tomcat/webapps/
+      - type: volume
+        source: /home/ubuntu/jdk-16
+        target: /java
+      - type: volume
+        source: /home/ubuntu/apache-tomcat-9.0.45
+        target: /tomcat
+      - data-volume:/tomcat/webapps/
 volumes:
   data-volume:
 # data-volume:/usr/local/tomcat/webapps/
