@@ -1,6 +1,5 @@
 FROM busybox:stable
-ENV JAVA_HOME /Java
+ENV JAVA_HOME /tomcat/jdk-16
 RUN export JAVA_HOME
 EXPOSE 8080
-RUN ls /Java
 ENTRYPOINT ["/tomcat/bin/catalina.sh", "run"]
