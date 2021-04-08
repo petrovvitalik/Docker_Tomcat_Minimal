@@ -20,5 +20,5 @@ services:
 volumes:
   artifact-volume:
   java-volume:
-  tomcat-volume:volume:
+  tomcat-volume:
 # data-volume:/usr/local/tomcat/webapps/
