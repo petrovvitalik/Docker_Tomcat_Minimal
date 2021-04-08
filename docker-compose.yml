@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - data-volume:/usr/local/tomcat/webapps/
+      - data-volume:/tomcat/webapps/
 volumes:
   data-volume:
 # data-volume:/usr/local/tomcat/webapps/
