@@ -1,7 +1,7 @@
 version: "3.9"
 
-x-services-volume:
-  &services-volume
+x-volumes:
+  &default-volume
   type: bind
   source: ./appdata
   target: /var/opt
@@ -9,13 +9,14 @@ x-services-volume:
 services:
   back:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
-    volumes: *services-volume
+    volumes: ["vol1"]
     links:
       - front
   front:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
-    volumes:
-        <<: *services-volume
-        target: /usr/local/tomcat/webapps/
+    volumes: ["vol1"]
+
+volumes:
+  vol1: *default-volume
