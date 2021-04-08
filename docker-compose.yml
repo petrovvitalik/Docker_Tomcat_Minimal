@@ -13,9 +13,6 @@ services:
       - "8080:8080"
     volumes:
       - data-volume:/tomcat/webapps/
-      - type: bind
-        source: /home/ubuntu/apache-tomcat-9.0.45/
-        target: /tomcat
 volumes:
   data-volume:
 # data-volume:/usr/local/tomcat/webapps/
