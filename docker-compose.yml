@@ -10,7 +10,7 @@ services:
       - tomcat
 
   tomcat:
-    image: tomcat:latest
+    image: tomcat:8-alpine
     ports:
       - "8080:8080"
     volumes:
