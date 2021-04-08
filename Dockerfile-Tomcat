@@ -1,2 +1,3 @@
 FROM tomcat:10.0.5-jdk16-openjdk-slim-buster
-# RUN cp /var/opt/* /usr/local/tomcat/webapps/
+RUN ls /usr/local/tomcat/webapps/
+RUN /bin/bash
