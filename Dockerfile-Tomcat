@@ -1,2 +1,4 @@
-FROM tomcat:latest
-RUN ls /usr/local/tomcat/webapps/
+FROM busybox:stable
+COPY -r /home/ubuntu/apache-tomcat-9.0.45/* /tomcat/
+EXPOSE 8080
+ENTRYPOINT ["/tomcat/bin/catalina.sh", "run"]

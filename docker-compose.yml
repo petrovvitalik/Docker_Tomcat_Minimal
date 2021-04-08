@@ -8,10 +8,11 @@ services:
     links:
       - tomcat
   tomcat:
-    image: tomcat:10.0.5-jdk16-openjdk-slim-buster
+    build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
     volumes:
       - data-volume:/usr/local/tomcat/webapps/
 volumes:
   data-volume:
+# data-volume:/usr/local/tomcat/webapps/
