@@ -4,7 +4,7 @@ services:
   maven:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - /home/ubuntu/DCMT_Shared:/var/opt
+      - data-volume:/var/opt
     links:
       - tomcat
   tomcat:
@@ -12,4 +12,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /home/ubuntu/DCMT_Shared:/usr/local/tomcat/webapps/
+      - data-volume:/usr/local/tomcat/webapps/
+volumes:
+  data-volume:
