@@ -8,7 +8,7 @@ services:
     links:
       - tomcat
   tomcat:
-    image: tomcat:latest
+    image: tomcat:10.0.5-jdk16-openjdk-slim-buster
     ports:
       - "8080:8080"
     volumes:
