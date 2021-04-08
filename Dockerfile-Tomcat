@@ -1,4 +1,5 @@
 FROM busybox:stable
-RUN apt install  default-jdk -y
+ENV ENV JAVA_HOME /Java
+RUN export JAVA_HOME
 EXPOSE 8080
 ENTRYPOINT ["/tomcat/bin/catalina.sh", "run"]
