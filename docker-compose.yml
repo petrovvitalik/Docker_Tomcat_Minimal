@@ -1,17 +1,21 @@
----
 version: "3.9"
+
+x-services-volume:
+  &services-volume
+  type: bind
+  source: ./appdata
+  target: /var/opt
+
 services:
   back:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
-    volumes:
-      - type: bind
-        source: /home/ubuntu/DCMT_Shared
-        target: /var/opt/
+    volumes: *services-volume
+    links:
+      - front
   front:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
     volumes:
-      - type: bind
-        source: /home/ubuntu/DCMT_Shared
+        - <<: *services-volume
         target: /usr/local/tomcat/webapps/
