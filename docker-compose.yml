@@ -4,7 +4,7 @@ services:
   back:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - appdata:/var/opt
+      - ./appdata:/var/opt
     links:
       - front
   front:
@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - appdata:/var/opt
+      - ./appdata:/var/opt
 
 Volumes:
   appdata:
