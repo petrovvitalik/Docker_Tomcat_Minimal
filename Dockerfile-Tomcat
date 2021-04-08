@@ -1,6 +1,6 @@
 FROM busybox:stable
 ENV JAVA_HOME /java
 ENV PATH ${PATH}:${JAVA_HOME}/bin
-ls /java
+RUN ls /java
 EXPOSE 8080
 ENTRYPOINT ["/tomcat/bin/catalina.sh", "run"]
