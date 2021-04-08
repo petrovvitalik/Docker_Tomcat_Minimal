@@ -1,22 +1,18 @@
 version: "3.9"
 
-x-volumes:
-  &default-volume
-  type: bind
-  source: ./appdata
-  target: /var/opt
-
 services:
   back:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
-    volumes: ["vol1"]
+    volumes:
+      - appdata:/var/opt
     links:
       - front
   front:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
-    volumes: ["vol1"]
+    volumes:
+      - appdata:/var/opt
 
-volumes:
-  vol1: *default-volume
+Volumes:
+  appdata:
