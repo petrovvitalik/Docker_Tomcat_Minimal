@@ -5,20 +5,14 @@ services:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
       - artifact-volume:/var/opt
-      - java-volume:/java
-      - tomcat-volume:/tomcat
     links:
       - tomcat
   tomcat:
-    build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
+    image: tomcat:8-alpine
     ports:
       - "8080:8080"
     volumes:
-      - artifact-volume:/tomcat/webapps/
-      - java-volume:/java
-      - tomcat-volume:/tomcat
+      - artifact-volume:/usr/local/tomcat/webapps/
 volumes:
   artifact-volume:
-  java-volume:
-  tomcat-volume:
 # data-volume:/usr/local/tomcat/webapps/
