@@ -1,15 +1,15 @@
 version: "3.9"
 
 services:
-  back:
+  maven:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - ./appdata:/var/opt
+      - /home/ubuntu/DCMT_Shared:/appdata
     links:
       - front
-  front:
+  tomcat:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
       - "8080:8080"
     volumes:
-      - ./appdata:/usr/local/tomcat/webapps/
+      - /home/ubuntu/DCMT_Shared:/usr/local/tomcat/webapps/
