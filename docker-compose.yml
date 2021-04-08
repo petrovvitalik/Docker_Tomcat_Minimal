@@ -4,7 +4,7 @@ services:
   maven:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - /home/ubuntu/DCMT_Shared:/appdata
+      - /home/ubuntu/DCMT_Shared:/var/opt
     links:
       - tomcat
   tomcat:
