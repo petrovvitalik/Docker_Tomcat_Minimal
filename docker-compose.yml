@@ -8,7 +8,7 @@ services:
     links:
       - tomcat
   tomcat:
-    build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
+    image: tomcat:latest
     ports:
       - "8080:8080"
     volumes:
