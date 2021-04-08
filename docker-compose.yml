@@ -12,7 +12,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./appdata:/var/opt
-
-Volumes:
-  appdata:
+      - ./appdata:/usr/local/tomcat/webapps/
