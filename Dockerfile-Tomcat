@@ -1,3 +1,1 @@
-FROM tomcat:10.0.5-jdk16-openjdk-slim-buster
-RUN ls /usr/local/tomcat/webapps/
-RUN /bin/bash
+FROM tomcat:latest
