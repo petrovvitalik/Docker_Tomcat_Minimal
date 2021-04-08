@@ -1,3 +1,4 @@
 FROM busybox:stable
+RUN
 EXPOSE 8080
 ENTRYPOINT ["/tomcat/bin/catalina.sh", "run"]
