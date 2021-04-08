@@ -5,7 +5,7 @@ services:
   maven:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - artifact-volume:/var/opt
+      - data-volume:/var/opt
     links:
       - tomcat
 
@@ -14,7 +14,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - artifact-volume:/usr/local/tomcat/webapps/
+      - data:/usr/local/tomcat/webapps/
 
 volumes:
-  artifact-volume:
+  data-volume:
