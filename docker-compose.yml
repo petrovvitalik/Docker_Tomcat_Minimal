@@ -6,7 +6,7 @@ services:
     volumes:
       - /home/ubuntu/DCMT_Shared:/appdata
     links:
-      - front
+      - tomcat
   tomcat:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Tomcat
     ports:
