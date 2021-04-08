@@ -4,7 +4,9 @@ services:
   maven:
     build: http://193.122.59.82:3000/petrovvitalik/Docker_Tomcat_Minimal/raw/master/Dockerfile-Maven
     volumes:
-      - data-volume:/var/opt
+      - artifact-volume:/var/opt
+      - java-volume:/java
+      - tomcat-volume:/tomcat
     links:
       - tomcat
   tomcat:
@@ -12,13 +14,11 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - type: bind
-        source: /home/ubuntu/jdk-16
-        target: /java
-      - type: bind
-        source: /home/ubuntu/apache-tomcat-9.0.45
-        target: /tomcat
-      - data-volume:/tomcat/webapps/
+      - artifact-volume:/tomcat/webapps/
+      - java-volume:/java
+      - tomcat-volume:/tomcat
 volumes:
-  data-volume:
+  artifact-volume:
+  java-volume:
+  tomcat:volume
 # data-volume:/usr/local/tomcat/webapps/
